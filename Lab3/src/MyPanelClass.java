@@ -40,7 +40,7 @@ public class MyPanelClass extends JPanel {
 		g.setColor(Color.BLUE);
 		g.fillPolygon(triangle);
 
-		// Star
+		// Estrella
 		Polygon p2 = new Polygon();
 		p2.addPoint(x1 + 25, y1 + 73);
 		p2.addPoint(x1 + 41, y1 + 73);
