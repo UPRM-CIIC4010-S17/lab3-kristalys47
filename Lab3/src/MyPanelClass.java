@@ -23,38 +23,24 @@ public class MyPanelClass extends JPanel {
 		int width = x2 - x1;
 		int height = y2 - y1;
 
-		// Paint the background
+		// Background (Franjas rojas)
 		g.setColor(Color.RED);
 		g.fillRect(x1, y1, width + 1, height + 1);
+		
+		//Franjas Blancas
+		g.setColor(Color.WHITE);
+		g.fillRect(x1, height / 5, width+1, height / 5);
+		g.fillRect(x1, 3*(height / 5), width+1, height / 5);
 
-		// // Draw a border
-		// g.setColor(Color.WHITE);
-		// g.drawRect(x1, y1, width, height);
-		//
-		// // Draw a sub-border
-		// g.setColor(Color.BLACK);
-		// g.drawRect(x1 + 3, y1 + 3, width - 6, height - 6);
-		//
-		// // Lines
-		// g.setColor(Color.YELLOW);
-		// g.drawLine(x1, y1, x2, y2);
-		// g.setColor(Color.BLUE);
-		// g.drawLine(x2, y1, x1, y2);
+		//Triangulo
+		Polygon triangle = new Polygon();
+		triangle.addPoint(x1, y1);
+		triangle.addPoint(x1 + (width / 2), y1 + (height / 2));
+		triangle.addPoint(x1, y2);
+		g.setColor(Color.BLUE);
+		g.fillPolygon(triangle);
 
-		// g.setColor(Color.LIGHT_GRAY);
-		// g.fillOval((width-55)/2, (height-55)/2, 55, 55);
-
-		// Polygon p = new Polygon();
-		// p.addPoint(x1 + 5, y1 + 25);
-		// p.addPoint(x1 + 20, y1 + 10);
-		// p.addPoint(x1 + 35, y1 + 25);
-		// p.addPoint(x1 + 25, y1 + 25);
-		// p.addPoint(x1 + 25, y1 + 45);
-		// p.addPoint(x1 + 15, y1 + 45);
-		// p.addPoint(x1 + 15, y1 + 25);
-		// g.setColor(Color.YELLOW);
-		// g.fillPolygon(p);
-
+		// Star
 		Polygon p2 = new Polygon();
 		p2.addPoint(x1 + 25, y1 + 73);
 		p2.addPoint(x1 + 41, y1 + 73);
@@ -67,6 +53,6 @@ public class MyPanelClass extends JPanel {
 		p2.addPoint(x1 + 34, y1 + 98);
 		p2.addPoint(x1 + 38, y1 + 83);
 		g.setColor(Color.WHITE);
-		g.drawPolygon(p2);
+		g.fillPolygon(p2);
 	}
 }
